@@ -1,0 +1,5 @@
+MySQL Commands
+
+create database if not exists world;
+
+source world.sql;
