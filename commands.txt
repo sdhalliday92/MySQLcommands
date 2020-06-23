@@ -1,5 +1,11 @@
 MySQL Commands
 
+show databases;
+
+show tables;
+
 create database if not exists world;
+
+use world;
 
 source world.sql;
