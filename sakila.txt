@@ -1,3 +1,31 @@
 Sakila
 
-1.
+1. select * from actor;
+2. select * from actor where first_name="JOHN";
+3. select * from actor where last_name="NEESON";
+4. 
+5. select description from film where film_id=100;
+6. select * from film where rating="R";
+7. 
+8. select * from film order by length limit 10;
+9. select title from film;
+10. select * from film where special_features="Deleted Scenes";
+11. select distinct last_name from actor;
+12. 
+13. 
+14. select * from inventory where film_id=1;
+15. 
+16. select avg(length) from film;
+17. 
+18. 
+19. select * from film order by length desc limit 5;
+20. 
+21. select title from film_list where category="HORROR";
+22. 
+23. 
+24. 
+25. select distinct country from country;
+26. 
+27. 
+28. 
+29. 
