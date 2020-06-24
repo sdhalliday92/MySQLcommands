@@ -31,7 +31,7 @@ select * from person limit 10;
 select FirstName, LastName from person;
 
 update person
-set age=28
+set Age=28
 where PersonID=1;
 
 delete from person where PersonID=1;
