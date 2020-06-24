@@ -48,3 +48,19 @@ select * from person order by Age;
 
 select * from person order by Age desc;
 
+select count(PersonID) from person;
+
+select sum(Age) from person;
+
+select min(Age) from person;
+
+select max(Age) from person;
+
+select avg(Age) from person;
+
+select fk_orderID, sum(quantity) as totalQuantity from orderline group by fk_orderID;
+
+select orders.orderID, customer.fname from orders join customer on orders.fk_customerID=customer.customerID;
+
+select orders.orderID, customer.fname from orders join customer on orders.fk_customerID=customer.customerID order by orders.orderID;
+
