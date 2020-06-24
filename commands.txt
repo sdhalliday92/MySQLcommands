@@ -9,3 +9,30 @@ create database if not exists world;
 use world;
 
 source world.sql;
+
+describe city;
+
+drop table if exists;
+
+alter table person add gender varchar(1);
+
+alter table person drop column Gender;
+
+alter table person drop primary key;
+
+alter table person add constraint primary key (FirstName, LastName);
+
+insert into person (PersonID, FirstName, LastName, Age) values (1, "Scott", "Halliday", 27);
+
+select * from person;
+
+select * from person limit 10;
+
+select FirstName, LastName from person;
+
+update person
+set age=28
+where PersonID=1;
+
+delete from person where PersonID=1;
+
