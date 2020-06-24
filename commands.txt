@@ -9,3 +9,57 @@ create database if not exists world;
 use world;
 
 source world.sql;
+
+describe city;
+
+drop table if exists;
+
+alter table person add gender varchar(1);
+
+alter table person drop column Gender;
+
+alter table person drop primary key;
+
+alter table person add constraint primary key (FirstName, LastName);
+
+insert into person (PersonID, FirstName, LastName, Age) values (1, "Scott", "Halliday", 27);
+
+update person
+set Age=28
+where PersonID=1;
+
+delete from person where PersonID=1;
+
+select * from person;
+
+select * from person limit 10;
+
+select FirstName, LastName from person;
+
+select distinct Age from person;
+
+select * from person where Age > 18;
+
+select FirstName as F_Name, LastName, Age from person
+
+select FirstName, LastName, Age, Age*365 AS Age_Days from person;
+
+select * from person order by Age;
+
+select * from person order by Age desc;
+
+select count(PersonID) from person;
+
+select sum(Age) from person;
+
+select min(Age) from person;
+
+select max(Age) from person;
+
+select avg(Age) from person;
+
+select fk_orderID, sum(quantity) as totalQuantity from orderline group by fk_orderID;
+
+select orders.orderID, customer.fname from orders join customer on orders.fk_customerID=customer.customerID;
+
+select orders.orderID, customer.fname from orders join customer on orders.fk_customerID=customer.customerID order by orders.orderID;
