@@ -1,3 +1,22 @@
 World
 
-1.
+1. select count(district) from city where countrycode = "USA";
+2. select AVG(population) from country UNION select AVG(lifeexpectancy) from country where name = 'Argentina';
+3. select Name, lifeexpectancy from country where lifeexpectancy is not null order by lifeexpectancy desc limit 1;
+4. select co.name, ci.name from country co join city ci on co.capital=ci.id where co.name = "Spain";
+5. select cl.language from countrylanguage cl join country cr on cl.countrycode=cr.code where region='southeast asia';
+6. select name from city where name like "F%" limit 25;
+7. select count(*) from city where CountryCode="CHN";
+8. select Name, Population from country where Population is not null order by population limit 1;
+9. select count(*) from country;
+10. select * from country order by Population desc limit 10;
+11. select * from city where CountryCode="JPN" order by Population desc limit 5;
+12. select Name, Code from country where HeadOfState="Elisabeth II";
+13. select Name, (population/surfacearea) as PopRatio from country order by PopRatio limit 10;
+14. select distinct Language from countrylanguage;
+15. select * from country order by GNP desc limit 10;
+16. select * from country order by SurfaceArea desc limit 10;
+17. select * from countrylanguage where Language="French" AND Percentage > 50;
+18. select Name, Lifeexpectancy from country where lifeexpectancy is not null order by lifeexpectancy asc limit 1;
+19. select GovernmentForm, count(*) from country group by GovernmentForm;
+20. select count(*) from country where IndepYear is not null;
