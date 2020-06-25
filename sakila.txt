@@ -3,29 +3,30 @@ Sakila
 1. select * from actor;
 2. select * from actor where first_name="JOHN";
 3. select * from actor where last_name="NEESON";
-4. 
+4. select * from actor where (actor_id % 10) = 0;
 5. select description from film where film_id=100;
 6. select * from film where rating="R";
-7. 
+7. select * from film where rating !="R";
 8. select * from film order by length limit 10;
 9. select title from film;
 10. select * from film where special_features="Deleted Scenes";
-11. select distinct last_name from actor;
-12. 
-13. 
-14. select * from inventory where film_id=1;
-15. 
+11. select last_name , count(last_name) from actor group by last_name having count(last_name)=1;
+12. select last_name from actor group by last_name having count(last_name)>1;
+13. select fa.actor_id, count(fa.actor_id), a.first_name, a.last_name from film_actor fa join actor a on fa.actor_id=a.actor_id group by fa.actor_id order by count(fa.actor_id) desc limit 1;
+14. select * from inventory where film_id=(select film_id from film where title='Academy Dinosaur') and store_id=1;
+15. select return_date from rental where inventory_id=(select film_id from film where title='Academy Dinosaur');
 16. select avg(length) from film;
-17. 
-18. 
+17. select avg(length), category from film_list group by category;
+18. select count(film_id) from film where description like "%Robot%";
 19. select * from film order by length desc limit 5;
-20. 
+20. select count(release_year) from film where release_year = 2010;
 21. select title from film_list where category="HORROR";
-22. 
-23. 
-24. 
+22. select concat(first_name,' ', last_name) as full_name from staff where staff_id=1;
+23. select * from nicer_but_slower_film_list where actors like '%Fred Costner%' \G;
+24. select inventory_id, film_id, store_id from inventory i join film_list fl on i.film_id=fl.fid where title="bucket brotherhood";
 25. select distinct country from country;
-26. 
-27. 
-28. 
+25-1. select name as language from language order by name asc;
+26. select concat(first_name, ' ', last_name) as full_name from actor where last_name like '%son%'
+27. select category, count(category) from film_list group by category having count(category) > 1;
+28. select a.actor_id, a.first_name, a.last_name, count(a.actor_id) from actor a join film_actor fa on a.actor_id=fa.actor_id group by actor_id having count(a.actor_id) > 1;
 29. 

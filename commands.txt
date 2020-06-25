@@ -40,6 +40,8 @@ select distinct Age from person;
 
 select * from person where Age > 18;
 
+select * from film where rating !="R";
+
 select FirstName as F_Name, LastName, Age from person
 
 select FirstName, LastName, Age, Age*365 AS Age_Days from person;
@@ -63,4 +65,7 @@ select fk_orderID, sum(quantity) as totalQuantity from orderline group by fk_ord
 select orders.orderID, customer.fname from orders join customer on orders.fk_customerID=customer.customerID;
 
 select orders.orderID, customer.fname from orders join customer on orders.fk_customerID=customer.customerID order by orders.orderID;
+
+
+
 
